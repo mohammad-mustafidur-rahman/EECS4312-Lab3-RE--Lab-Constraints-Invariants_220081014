@@ -80,7 +80,7 @@ def test_unknown_medication_rejected():
         DispenseEvent("p1", "mystery_drug", 10, 1)
 
 def test_prevents_duplicate_dispense_same_day():
-    # 4. (Invariant): A patient may not receive the same medication more than once per day.
+    # 4. A patient may not receive the same medication more than once per day.(Invarient)
     e1 = DispenseEvent("p1", "testmed", 10, 1)
     e2 = DispenseEvent("p1", "testmed", 20, 1)  # dose can differ; still duplicate med for same patient/day
 
