@@ -4,8 +4,9 @@ EECS4312 Winter26:Lab3
 
 # Medication Dispensing System Documentation
 
-Name: Mohammad Mustafidur Rahman
-Student ID: 220081014
+**Name: Mohammad Mustafidur Rahman**
+
+**Student ID: 220081014**
 
 ## System Description
 
