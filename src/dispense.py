@@ -41,7 +41,7 @@ class DispenseEvent:
 
         #1. The dose must be a positive value.
         if not isinstance(dose_mg, (int, float)) or isinstance(dose_mg, bool):
-            raise ValueError("dose_mg must be a number (int or float)")
+            raise ValueError("dose_mg must be a number that is int or float")
         if dose_mg <= 0:
             raise ValueError("dose_mg must be a positive value")
 
