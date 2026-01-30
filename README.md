@@ -1,3 +1,40 @@
+# EECS 4312 — Lab 3 (Constraints, Invariants, and Tests)
+
+Name: Mohammad Mustafidur Rahman
+Student ID: 220081014
+
+## System (Medication Dispensing)
+This project models a simple medication dispensing system for a pharmacy.  
+Each dispensing event records:
+- `patient_id` (who received it)
+- `medication` (what was dispensed)
+- `dose_mg` (dose per unit, in milligrams)
+- `quantity` (number of units dispensed)
+
+## Constraints (checked when creating a DispenseEvent)
+These are input rules that must be true for an event to be accepted:
+1. **Dose must be positive** (`dose_mg > 0`)
+2. **Quantity must be a positive integer** (`quantity` is an `int` and `> 0`)
+3. **Each medication has a max daily dose**, and `dose_mg` must not exceed it
+4. **Doses are in milligrams** (stored as `dose_mg`)
+
+## Invariant (system-wide rule)
+This must always hold across recorded events (for the same day):
+- A patient **cannot receive the same medication more than once per day**.
+
+> Note: Since the starter code does not include a date field, the invariant check assumes the list of `existing_events` represents events for the same day.
+
+## Tests → Requirements mapping
+The tests in `tests/test_requirements.py` validate requirements directly:
+
+- `test_rejects_zero_or_negative_dose` → Constraint: dose must be positive  
+- `test_rejects_invalid_quantity` → Constraint: quantity must be a positive integer  
+- `test_enforces_max_daily_dose` → Constraint: dose must not exceed medication max dose  
+- `test_prevents_duplicate_dispense_same_day` → Invariant: no duplicate same patient + medication in a day
+
+
+
+
 EECS4312 Winter26:Lab3
 
 # Title: FROM ELICITATION TO CONSTRAINTS, INVARIANTS, AND TESTS
